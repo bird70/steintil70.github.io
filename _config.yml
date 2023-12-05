@@ -1,31 +1,6 @@
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - github-pages
-
 title: pelicanblog
 
 repository: bird70/steintil70.github.com
 url: https://bird70.github.io/steintil70.github.io
-
-collections:
-  authors:
-    output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
 
 theme: minima
