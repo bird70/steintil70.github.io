@@ -1,9 +1,13 @@
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - github-pages
+
+title: pelicanblog
+
+repository: bird70/steintil70.github.com
+url: https://bird70.github.io/steintil70.github.io
 
 collections:
   authors:
@@ -24,3 +28,5 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+theme: minima
