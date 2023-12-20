@@ -5,7 +5,7 @@ author: steintil
 
 # Esri's Mosaic Dataset - a data model for multidimensional raster data
 
-The Esri Mosaic Dataset https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/mosaic-datasets.htm is the underlying fundamental data model which should be used for managing and accessing large numbers of spatial data in raster file format.
+The [Esri Mosaic Dataset](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/mosaic-datasets.htm) is the underlying fundamental data model which should be used for managing and accessing large numbers of spatial data in raster file format.
 
 It can be used to configure access to immense numbers of raster files in various formats. In many cases, it's used for image rasters, but it is very useful for working with scientific rasters as well, such as weather forecasts or stacked timelines of model output etc.
 
@@ -21,7 +21,6 @@ The Mosaic dataset can be thought of as a database where each raster that is add
 
 To create a Mosaic dataset interactively and adding rasters as needed is possible in ArcGIS Pro, using the built-in tools, but that process can quickly become cumbersome if you have specific requirements for what the mosaic dataset should contain and how it should behave, especially if you need to continuously add more rasters.
 
-Esri's Mosaic Dataset Configuration Scripts (https://github.com/esri/mdcs-py) are very handy when it comes to scripting the process, using Python and XML configuration files. There are some examples available for their use, but they are not very sophisticated and I wanted something in Powershell, which allowed me to speed up the process by doing parallel processing, and which wouldn't be overly complicated. The PS script I created uses script arguments to parameterize what MDCS receives as input.
+[Esri's Mosaic Dataset Configuration Scripts](https://github.com/esri/mdcs-py) are very handy when it comes to scripting the process, using Python and XML configuration files. There are some examples available for their use, but they are not very sophisticated and I wanted something in Powershell, which allowed me to speed up the process by doing parallel processing, and which wouldn't be overly complicated. The PS script I created uses script arguments to parameterize what MDCS receives as input.
 
-I am providing an example of applying MDCS to create a complex, nested, set of mosaic datasets, configuring them and adding rasters, as well as populating the database with the attributes for all rasters here:
-https://github.com/bird70/MDCS_mosaic_dataset_config_scripts
+I am providing an example of applying MDCS to create a complex, nested, set of mosaic datasets, configuring them and adding rasters, as well as populating the database with the attributes for all rasters here: [MDCS config scripts](https://github.com/bird70/MDCS_mosaic_dataset_config_scripts)
