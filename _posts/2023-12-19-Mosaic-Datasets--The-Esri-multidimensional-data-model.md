@@ -4,7 +4,7 @@ author: steintil
 image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
 ---
 
-![({{ page.image | relative_url }})]
+![]({{ page.image | relative_url }})
 
 In my Github repo [MDCS config scripts](https://github.com/bird70/MDCS_mosaic_dataset_config_scripts), I am providing an example of applying MDCS to create a complex, nested, set of mosaic datasets, configuring them and adding rasters, as well as populating the database with the attributes for all rasters here. If you work with raster files in Esri software, I encourage you to have a look.
 
