@@ -1,5 +1,5 @@
 ---
-title: Welcome to my blog
+title: Welcome to ask-the-data, my blog
 ---
 
 ## Off to a great start
