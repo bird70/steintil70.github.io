@@ -22,7 +22,7 @@ To understand how the Mosaic Dataset can be useful, imagine having to work with 
 
 The Mosaic dataset can be thought of as a database where each raster that is added to it becomes a single record. When you request a certain record (or a set of records) to be retrieved from the database, the rest is inactive and you can display the result on your map. To make this possible, rasters are added to the database (mosaic dataset) along with attributes which allow specifying the parameters for a search.
 
-To create a Mosaic dataset interactively and adding rasters as needed is possible in ArcGIS Pro, using the built-in tools, but that process can quickly become cumbersome if you have specific requirements for what the mosaic dataset should contain and how it should behave, especially if you need to continuously add more rasters.
+Creating and configuring a Mosaic dataset and adding rasters interactively as needed is possible in ArcGIS Pro, using the built-in tools, but that process can quickly become cumbersome if you have specific requirements for what the mosaic dataset should contain and how it should behave, especially if you need to continuously add more rasters.
 
 [Esri's Mosaic Dataset Configuration Scripts](https://github.com/esri/mdcs-py) are very handy when it comes to scripting the process, using Python and XML configuration files. There are some examples available for their use, but they are not very sophisticated and I wanted something in Powershell, which allowed me to speed up the process by doing parallel processing, and which wouldn't be overly complicated. The PS script I created uses script arguments to parameterize what MDCS receives as input.
 
