@@ -6,11 +6,13 @@ image: /assets/images/GUID-31E04AE1-F88D-41BF-A6B4-E7EB8E5A0853-web.png
 
 ![]({{ page.image | relative_url }})
 
-In my Github repo [MDCS config scripts](https://github.com/bird70/MDCS_mosaic_dataset_config_scripts), I am providing an example of applying MDCS to create a complex, nested, set of mosaic datasets, configuring them and adding rasters, as well as populating the database with the attributes for all rasters here. If you work with raster files in Esri software, I encourage you to have a look.
+The Esri Mosaic Dataset is the foundational data structure for storing and retrieving large numbers of rasters (see next section below).
 
 Creating and configuring a Mosaic dataset and adding rasters interactively as needed is possible in ArcGIS Pro, using the built-in tools, but that process can quickly become cumbersome if you have specific requirements for what the mosaic dataset should contain and how it should behave, especially if you need to continuously add more rasters.
 
 [Esri's Mosaic Dataset Configuration Scripts](https://github.com/esri/mdcs-py) are very handy when it comes to scripting the process, using Python and XML configuration files. There are some examples available for their use, but they are not very sophisticated and I wanted something in Powershell, which allowed me to speed up the process by doing parallel processing, and which wouldn't be overly complicated. The PS script I created uses script arguments to parameterize what MDCS receives as input.
+
+In my Github repo [MDCS config scripts](https://github.com/bird70/MDCS_mosaic_dataset_config_scripts), I am providing an example of applying MDCS to create a complex, nested, set of mosaic datasets, configuring them and adding rasters, as well as populating the database with the attributes for all rasters here. If you work with raster files in Esri software, I encourage you to have a look.
 
 # Esri's Mosaic Dataset - a data model for multidimensional raster data
 
