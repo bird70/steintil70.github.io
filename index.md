@@ -2,8 +2,6 @@
 title: blog
 ---
 
-# About this blog
-
 Hi - I'm Tilmann and I work with data in many forms. This blog documents some of the work that I have been busy with lately, always in the hope that others will find it useful as well - and also to keep the memory fresh for myself.
 
 I am planning to add more posts whenever I think something is not very well described elsewhere or where I think more examples could help.

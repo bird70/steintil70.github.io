@@ -16,4 +16,4 @@ Notable projects that I've worked on recently:
 
 ## Coursework, Tutorials etc.
 
-Blogs about data storage, processing & analysis
+Relevant content related to data storage, processing & analysis (AI/ML) etc.
