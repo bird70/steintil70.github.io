@@ -2,19 +2,17 @@
 title: portfolio
 ---
 
-# About this blog
-
-Hi - I'm Tilmann and I work with data in many forms. This blog documents some of the work that I'm doing, always in the hope that others will find it useful as well.
-
-I am planning to add more posts whenever I think something is not very well described elsewhere or where I think more examples could help.
-
-Spatial datasets are not always part of the story, but I would expect them to crop up every now and again, both because - as they say - spatial can be special, and because I work with spatial datasets a lot.
-
-Stay tuned ...
-
 ## Projects
 
-Notable projects that I've worked on
+Notable projects that I've worked on recently:
+
+[An online database dashboard with specimen data](https://experience.arcgis.com/experience/bc4a9a2332294bb9ae7ee003fdf9c5ca/)
+
+[Ocean Quality Data web application](https://data-niwa.opendata.arcgis.com/documents/7454241f76b74f8891e3c55b8a78045c)
+
+[Benthic Habitat Analysis Hauraki Gulf (Storymap)](https://storymaps.arcgis.com/stories/7951d5b1fdfe4c3dae8498aaa6a9a687)
+
+[Experimental viewer for Cyclone flow data - created after the event (does not display impact). Data are uncalibrated](https://topnetvisdemo.netlify.app/)
 
 ## Coursework, Tutorials etc.
 
