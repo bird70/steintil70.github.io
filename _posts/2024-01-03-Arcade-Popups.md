@@ -6,7 +6,9 @@ author: steintil
 
 Happy New Year!
 
-Recently I've found nice ways to apply Esri's Arcade script language, which is similar to JavaScript, to populate fields that are displayed in a Web App popup when a user clicks on the map.
+Recently I've used Esri's Arcade script language, which is similar to JavaScript, to populate fields that are displayed in a Web App popup when a user clicks on the map. Arcade is used in the web map configuration.
+
+![Formatted popup with conditional display of images and ]({{site.url}}/assets/images/ArcadeFormattedPopup.jpg "Formatted popup with conditional display of images and output from feature set query (above the image)")
 
 [Arcade script expressions](https://developers.arcgis.com/arcade/) in ArcGIS Web Maps can be used for various tasks, including querying feature layer data and returning results as formatted popups. (So this post refers specifically to the "popup profile" in Arcade.)
 
@@ -24,7 +26,7 @@ Here I am presenting the use of Arcade in a recent project, along with the forma
 
 # Web app and underlying data
 
-The project where I have used Arcade recently comprises a global dataset of sampling locations of marine biological data which need to be presented to non-specialist users in a publicly accessible, browser app. Datasets will occasionally be appended, so this database is also continuously growing, but at the moment we are dealing with approximated 160.000 records, with a high number of attributes in the table. Attributes and, occasionally, sample Images will need to be displayed in a webmap popup when a user clicks on a sample location. (Sample Images are stored in an external image management system and individual images are only referenced by their ID).
+[The project where I have used Arcade recently](https://experience.arcgis.com/experience/bc4a9a2332294bb9ae7ee003fdf9c5ca/) (check out the NIC Dashboard) comprises a global dataset of sampling locations of marine biological data which need to be presented to non-specialist users in a publicly accessible, browser app. Datasets will occasionally be appended, so this database is also continuously growing, but at the moment we are dealing with approximated 160.000 records, with a high number of attributes in the table. Attributes and, occasionally, sample Images will need to be displayed in a webmap popup when a user clicks on a sample location. (Sample Images are stored in an external image management system and individual images are only referenced by their ID).
 
 # Feature layer publishing, indexing & basemap
 
@@ -61,6 +63,7 @@ The following expression determines the total number of features in the DB for t
 
 var alle = FeatureSetByName($datastore,"PROD_feature_layer",['OBJECTID','Preferred_Taxon','Depth1','Depth2'], False)
 var spec = $feature.Preferred_Taxon;
+
 var sql = "Preferred_Taxon = '" + spec + "'";
 var target = Filter(alle,sql);
 var anzahl = Count( target);
@@ -74,6 +77,7 @@ for (var row in target) {
     D1 = row["Depth1"]
     D2 = row["Depth2"]
 
+    // Check  both the `Depth1` and `Depth2` attributes and make sure we use the max of the two values, whichever field it is stored in:
     var localMax = Max([D1,D2])
 
 
@@ -96,13 +100,13 @@ IIF(IsEmpty($feature["Specimen_Image_1"]), "none", "block");
 
 ```
 
-The above expression (called expression/expr1) is used in the custom HTML below for populating an HTML table with pointers to the image that are going to be used by the users' browser to display images where they exist. Basically the expression means "Display nothing if the required field is empty, otherwise display something (a block).
+The above expression (called `expression/expr1`) is used in the custom HTML below for populating an HTML table with pointers to the image that are going to be used by the users' browser to display images where they exist. Basically the expression means "Display nothing if the required field is empty, otherwise display something (a block).
 
 ## Custom HTML fields
 
-We want to display images only when they are referenced in the record - otherwise nothing should be displayed. That's what we have used Arcade for: an expression is run for each of the `imageNN` attributes to determine whether or not there is content there.
+We want to display images only when they are referenced in the record - otherwise nothing should be displayed. That's what we have used Arcade for: an expression is run for each of the `imageNN` attributes to determine whether or not there is content there. Below the <img style="display:{expression/expr1}"> option defines a style where the image is added if an entry is there in the `Specimen_Image_1` attribute, as defined above, or alternatively a style of `none` (which renders the table row invisible, essentially eliminating unnecessary rows).
 
-The following HTML code generates the table in which images are displayed in the popup, depending on the Arcade expressions and creates a link to display the image.
+The following HTML code generates the (invisible) table in which images are displayed in the popup, depending on the Arcade expressions and creates a link to display the image. This helps achieving a tidy format for the image display (this can be used in a new 'Text' field for the popup, after switching to 'Source' display in the popup configuration dialogue in ArcGIS Online):
 
 ```
 <figure>
